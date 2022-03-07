@@ -2,15 +2,21 @@
 
 ## confidentiality
 
+```
 prevention: securely stored passwords,data encryption,multi-factor authentication (MFA), biometrics
+```
 
 ## integrity
 
+```
 prevention: well functioning authentication methods and access control, error handling, checking integrity with hash functions
+```
 
 ## availability
 
+```
 prevention: network traffic control, hardware maintenance, firewalls
+```
 
 # task 6
 
