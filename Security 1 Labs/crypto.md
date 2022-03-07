@@ -19,20 +19,30 @@ decoder: https://md5hashing.net/hash/sha256
 ### First approach
 
 Modulus:
+
+```
 nano test.key (file with privite kay)
 openssl rsa -in test.key -pubout > test.pub
 openssl rsa -in test.pub -pubin -modulus -noout
+```
+
 Signature:
+
+```
 echo -n "modulus string" | openssl dgst -sign test.key -sha256 -out sign.sha256
 openssl enc -base64 -in sign.sha256 -out sign.sha256.base64
 cat sign.sha256.base64
+```
 
 ### Second approach
 
 Modulus:
+
+```
 openssl rsa -in data/00-crypto/id_rsa -modulus -noout
 Signature:
 openssl dgst -sha256 -sign data/00-crypto/id_rsa data/00-crypto/rsa_modulus.txt | base64 --wrap=0
+```
 
 ## Task 8
 
