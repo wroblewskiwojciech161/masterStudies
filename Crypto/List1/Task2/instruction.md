@@ -9,6 +9,11 @@ Fortunately for you they did not change the way the sign SignService works, but 
 1. Try to make prefix attack
 2. Want to find such s1 and s2, that MD5(m1 || s1) == MD5(m2 || s1)
 
+## Possible ?
+
+1. paper : Chosen-prefixcollisions for MD5 2012
+2. Shown that for aproximately 2^39 calls to MD%, it is possible to find s1,s2 for any m1,m2
+
 ## We can try hashclash (probably ?), evilize program, md5collgen
 
 Example with hashclash
