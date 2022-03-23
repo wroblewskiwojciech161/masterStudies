@@ -62,10 +62,20 @@ ECR++DtJzxQ8FuWGjZMCFwYnXyGcz8NzMENGa/lNLrkQ9D0gutHw
 openssl dgst -md5 -sign key.pem -out new_grade.sign new_grade.txt
 ```
 
+## Generating public key
+
+```
+openssl x509 -in cacertificate.pem -pubkey -noout
+```
+
 ## Final veryfication
 
 ```
 openssl dgst -md5 -verify public.pem -signature new_grade.sign new_grade.txt
+```
+
+```
+Verified OK
 ```
 
 # Solution with RSA CRACK
